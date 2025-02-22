@@ -1,0 +1,29 @@
+menu "JerryScript configuration"
+
+    config JERRYSCRIPT_HEAP_SIZE
+        int "Size of JerryScript Heap in KB"
+        default 64
+        help
+            If you use internal memory, reduce this size to the minimum
+
+    choice JERRYSCRIPT_MALLOC_STRATEGY
+        prompt "Buffer allocation strategy"
+        default JERRYSCRIPT_MALLOC_STRATEGY_INTERNAL
+        help
+            Maps lfs_malloc to ESP-IDF capabilities-based memory allocator or
+            disables dynamic allocation in favour of user-provided static buffers.
+
+        config JERRYSCRIPT_MALLOC_STRATEGY_INTERNAL
+            bool "Internal heap"
+            help
+                Uses ESP-IDF heap_caps_malloc to allocate from internal heap.
+
+        config JERRYSCRIPT_MALLOC_STRATEGY_SPIRAM
+            bool "SPIRAM heap"
+            depends on ESP_ALLOW_BSS_SEG_EXTERNAL_MEMORY
+            help
+                Uses ESP-IDF heap_caps_malloc to allocate from SPIRAM heap.
+
+    endchoice
+
+endmenu
