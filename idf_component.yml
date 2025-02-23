@@ -1,12 +1,8 @@
 # SPDX-FileCopyrightText: Copyright 2025 Clever Design (Switzerland) GmbH
 # SPDX-License-Identifier: MIT
-version: "1.0.0"
-description: "Using JavaScript (JerryScript) on ESP32"
-license: "MIT"
-repository: "https://github.com/marcel-cd/jerryscript.esp"
+version: 1.0.3
+description: Using JavaScript (JerryScript) on ESP32
+license: MIT
+repository: https://github.com/marcel-cd/jerryscript.esp
 dependencies:
-  idf: ">=5.0"
-files:
-  exclude:
-    - "docs"
-    - "docs/**/*"
+  idf: '>=5.0'
