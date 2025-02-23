@@ -30,4 +30,4 @@ We welcome contributions in the form of code, bug reports, and feedback.
 
 Join the conversation on:
 - **[GitHub Discussions](https://github.com/marcel-cd/jerryscript.esp/discussions)** – For general chat or questions.
-- **[GitHub Issues](https://github.com/marcel-cd/jerrryscript.esp/issues)** – To report bugs or suggest features.
+- **[GitHub Issues](https://github.com/marcel-cd/jerryscript.esp/issues)** – To report bugs or suggest features.
