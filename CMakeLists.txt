@@ -23,8 +23,9 @@ idf_component_register(
     INCLUDE_DIRS ${JERRY_INCLUDE_DIRS}
 )
 
+idf_build_get_property(python PYTHON)
 # Build JerryScript
-execute_process(COMMAND ${JERRY_ROOT_DIR}/tools/build.py
+execute_process(COMMAND ${python} ${JERRY_ROOT_DIR}/tools/build.py
   --clean
   --builddir=${JERRY_BUILD_DIR}
   --lto=OFF
