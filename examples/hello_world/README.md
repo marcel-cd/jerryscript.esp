@@ -52,9 +52,9 @@ void jerry_test() {
 }
 ```
 
-## Output__
+## Output
 
-``` sh
+```
 I (307) main_task: Started on CPU0
 I (317) main_task: Calling app_main()
 I (317) JS: This test run the following script code: 
