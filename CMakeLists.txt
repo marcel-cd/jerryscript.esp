@@ -6,7 +6,6 @@ cmake_minimum_required(VERSION 3.16)
 # Set JerryScript variables
 set(JERRY_ROOT_DIR "${CMAKE_CURRENT_SOURCE_DIR}/jerryscript")
 set(JERRY_ERROR_MESSAGES ON)
-set(JERRY_ATTR_GLOBAL_HEAP "-DJERRY_ATTR_GLOBAL_HEAP='__attribute__((section(\".ext_ram.bss\")))'")
 set(JERRY_BUILD_DIR ${JERRY_ROOT_DIR}/build/jerry)
 set(JERRY_INCLUDE_DIRS "${JERRY_ROOT_DIR}/jerry-ext/include" "${JERRY_ROOT_DIR}/jerry-core/include")
 list(APPEND JERRY_COMPILE_FLAGS "${COMPILE_OPTIONS};${C_COMPILE_OPTIONS}")
