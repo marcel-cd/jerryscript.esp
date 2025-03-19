@@ -35,7 +35,10 @@ execute_process(COMMAND ${python} ${JERRY_ROOT_DIR}/tools/build.py
   --mem-heap=${CONFIG_JERRYSCRIPT_HEAP_SIZE}
   --profile=es.next
   --compile-flag=${JERRY_COMPILE_FLAGS}
-  --toolchain=${CMAKE_TOOLCHAIN_FILE})
+  --toolchain=${CMAKE_TOOLCHAIN_FILE}
+  #--verbose
+  --cmake-param=-GNinja
+  )
 
 
 add_library(jerry-core STATIC IMPORTED)
