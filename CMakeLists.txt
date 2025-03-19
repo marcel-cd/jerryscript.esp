@@ -6,11 +6,9 @@ cmake_minimum_required(VERSION 3.16)
 # Set JerryScript variables
 set(JERRY_ROOT_DIR "${CMAKE_CURRENT_SOURCE_DIR}/jerryscript")
 set(JERRY_ERROR_MESSAGES ON)
-# #define JERRY_ATTR_GLOBAL_HEAP __attribute__((section(".ext_ram.bss")))
 set(JERRY_ATTR_GLOBAL_HEAP "-DJERRY_ATTR_GLOBAL_HEAP='__attribute__((section(\".ext_ram.bss\")))'")
 set(JERRY_BUILD_DIR ${JERRY_ROOT_DIR}/build/jerry)
 set(JERRY_INCLUDE_DIRS "${JERRY_ROOT_DIR}/jerry-ext/include" "${JERRY_ROOT_DIR}/jerry-core/include")
-
 list(APPEND JERRY_COMPILE_FLAGS "${COMPILE_OPTIONS};${C_COMPILE_OPTIONS}")
 # Make compile flags separated by spaces
 string(REPLACE ";" " " JERRY_COMPILE_FLAGS "${JERRY_COMPILE_FLAGS}")
@@ -23,7 +21,6 @@ idf_component_register(
 )
 
 idf_build_get_property(python PYTHON)
-
 # Build JerryScript
 # note: longish condition helps to avoid string escape hell for "JERRY_ATTR_GLOBAL_HEAP" define
 if (${CONFIG_JERRYSCRIPT_MALLOC_STRATEGY_SPIRAM})
